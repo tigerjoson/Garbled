@@ -1,0 +1,15 @@
+reference:
+	
+notepad++ npp script parameter:
+	"$(CURRENT_DIRECTORY)" 
+	"$(FULL_CURRENT_PATH)" 
+	$(SYS.JAVA_HOME)
+	$(FILE_NAME) name and extension of the current file in Notepad++ 
+	
+	define:
+	ENV_SET a = My Variable  // created:  a=My Variable
+	echo $(SYS.a)            // prints:   My Variable
+	ENV_SET a = aaa          // modified: a=aaa
+	echo $(SYS.a)            // prints:   aaa
+	ENV_UNSET a              // removed
+	CLS
