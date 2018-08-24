@@ -12,7 +12,7 @@ public class work {
 		//file_RW.Show_file_info(output_copy);
 		//file_RW.print_to_screen(data);
 		
-		file_RW.remove_string(output_copy,test_file);
+		file_RW.remove_string(output_copy,test_file2);
 		
 	}
 }

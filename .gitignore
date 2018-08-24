@@ -1,9 +1,9 @@
 #ignore folder
-**/check_encode_tool
+check_encode_tool/**
 Read_Write_file/**
 test_java/*
 #ignore git_quick_run.bat files
 git_quick_run.bat
 
-#ignore all .class files
+ll#ignore all .class files
 *.class
