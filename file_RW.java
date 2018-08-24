@@ -58,33 +58,7 @@ public class file_RW {
 		System.out.println("canwrite=" + file.canWrite());
 		System.out.println("exit=" + file.exists());
 	}
-	
-	
-	//make an fake data
-	static void fake_data(String file)throws IOException{
-		try{
-			String line;
-			String output;
-			int line_number=0 ;
-			int index=1;
-			int ascii_num;
-			char ch;
-			FileWriter fWriter = new FileWriter(file);
-			BufferedWriter bWriter = new BufferedWriter(fWriter);
-			for(int i=48; i<=57;i++){
-				ascii_num = i;
-				String ascii_num_string = String.valueOf(ascii_num);
-				ch = (char)ascii_num;
-				bWriter.write(ch);
-			}
-			bWriter.close();
-			fWriter.close();
-		}
-			//catch block
-		catch(FileNotFoundException e){
-			e.printStackTrace();
-		}
-	}
+
 	static void remove_string(String source_path,String destination_folder) throws IOException {
 		try {
 			int line_number = 0;
