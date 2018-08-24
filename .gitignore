@@ -4,3 +4,4 @@ Read_Write_file/**
 test_java/*
 #ignore git_quick_run.bat files
 git_quick_run.bat
+work.java
