@@ -1,0 +1,6 @@
+#ignore files
+check_encode_tool\
+Read_Write_file\
+test_java\
+#ignore git_quick_run.bat files
+git_quick_run.bat
