@@ -1,0 +1,58 @@
+package my_tool;
+
+import java.io.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+
+public class network_clean{
+	public static void main(String[] args) throws IOException {
+		String test_file ="path1";
+		InputStream inputStream = new FileInputStream(test_file);
+		InputStreamReader isr = new InputStreamReader(inputStream);
+		BufferedReader bReader = new BufferedReader(isr);
+		FileWriter fWriter = new FileWriter("path2");
+		BufferedWriter bWriter =new BufferedWriter(fWriter);
+		try{
+			String line ;
+			int i=0 ;
+			Pattern p_ip_addr = Pattern.compile("(\\d{1,3}\\.){3}\\d{1,3}");
+			Pattern p_mac_addr = Pattern.compile("(([0-9a-fA-F]){2}[:-]){5}([0-9a-fA-Z]){2}");
+		//	Pattern spacePattern = Pattern.compile("\\s");
+			
+	//	file_RW.print_to_screen("C:\\Users\\tiger\\Desktop\\0660\\source\\補摺1.csv", 20);
+			
+			//per line
+			while((line = bReader.readLine())!=null){
+				if(i<=0) {
+					i++;	
+					bWriter.write(line + "\r\n");
+				}
+				
+				Matcher ip_matcher =p_ip_addr.matcher(line);
+				Matcher mac_addrMatcher = p_mac_addr.matcher(line);
+			//	Matcher spaceMatcher =spacePattern.matcher(line);
+			
+					//System.out.println(matcher.group());
+				i++;
+					if (ip_matcher.find() && mac_addrMatcher.find()  ) {
+						System.out.print(i+",");
+						System.out.print(ip_matcher.group()+",");
+						System.out.println(mac_addrMatcher.group());
+						//System.out.print(line);
+						bWriter.write(ip_matcher.group()+","+ mac_addrMatcher.group()+ "\r\n");
+					} else {
+						System.out.print(i+","+"ip_matcher.find()="+ip_matcher.find()+",");
+						System.out.println("mac_addrMatcher.find()="+mac_addrMatcher.find());
+					}
+			} 
+		}catch(FileNotFoundException e){
+				e.printStackTrace();
+		}
+		bReader.close();
+		isr.close();
+		inputStream.close();
+		bWriter.close();
+		fWriter.close();
+	}
+}
