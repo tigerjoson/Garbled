@@ -16,8 +16,8 @@ public class network_clean{
 		try{
 			String line ;
 			int i=0 ;
-			Pattern p_ip_addr = Pattern.compile("(\\d{1,3}\\.){3}\\d{1,3}");
-			Pattern p_mac_addr = Pattern.compile("(([0-9a-fA-F]){2}[:-]){5}([0-9a-fA-Z]){2}");
+			Pattern p_ip_addr = Pattern.compile("[\\d{1,3}\\.]{3}\\d{1,3}");
+			Pattern p_mac_addr = Pattern.compile("[[0-9a-fA-F]{2}[:-]]{5}[[0-9a-fA-Z]]{2}"
 		//	Pattern spacePattern = Pattern.compile("\\s");
 			
 	//	file_RW.print_to_screen("C:\\Users\\tiger\\Desktop\\0660\\source\\補摺1.csv", 20);
