@@ -20,7 +20,7 @@ public class network_clean{
 			Pattern p_mac_addr = Pattern.compile("[[0-9a-fA-F]{2}[:-]]{5}[[0-9a-fA-Z]]{2}"
 		//	Pattern spacePattern = Pattern.compile("\\s");
 			
-	//	file_RW.print_to_screen("C:\\Users\\tiger\\Desktop\\0660\\source\\補摺1.csv", 20);
+	//	file_RW.print_to_screen("C:\\Users\\tiger\\Desktop\\0660\\source\\1.csv", 20);
 			
 			//per line
 			while((line = bReader.readLine())!=null){
