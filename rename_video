@@ -1,0 +1,35 @@
+package video_naming_rule;
+
+import java.io.*;
+import java.util.regex.*;
+
+import my_tool.*;
+
+public class rename_video {
+	public static void main(String[] args) throws IOException {
+		File source_file = new File("C:\\Users\\tiger\\Downloads\\share\\");
+		File target_file = new File("C:\\Users\\tiger\\Desktop\\notepad++backup\\");
+		String line;
+		String regex_string = "(BIG5)|(BDrip_)|(720P)|(Baha)|(WEB\\WDL)|(Sakurato)|(CHT)|(1080p)|(FLsnow)|(Airota)|(Nekomoe kissaten)|(x264)|(AT\\-X)|(_)|(AAC)|(NC\\-Raws)|(HYSUB)|(二次元之星)|(AVC)|(AAC)|(\\d{4}\\W\\d{4})|\\[|\\]";
+
+		int numer_of_files = source_file.list().length;
+		// ArrayList<String> unwanted_stringArrayList = new ArrayList<>();
+		Pattern unwant_word_pattern = Pattern.compile(regex_string);
+		String[] file_list_strings = file_RW.get_file_list(source_file);
+
+		// per file
+		for (int i = 0; i < numer_of_files; i++) {
+			Matcher matcher = unwant_word_pattern.matcher(file_list_strings[i]);
+			// per unwanted words
+			if (matcher.find()) {
+				String lineString;
+				lineString = file_list_strings[i].replaceAll(regex_string, "");
+				System.out.println("file_list_strings[i] : " + file_list_strings[i]);
+				System.out.println("lineString : " + lineString);
+			} else {
+				System.out.println("Not found" + file_list_strings[i]);
+			}
+
+		}
+	}
+}
